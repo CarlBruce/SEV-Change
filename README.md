@@ -16,7 +16,7 @@ The original 11 JSON files are preserved inside one ZIP, distributed as seven nu
 python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc1-git.zip
 ```
 
-The script verifies each part and the assembled ZIP against SHA-256 hashes in `release/parts.json`. Extract the ZIP to access `data/rsrcc/` and `data/disasterm3/`. The ZIP's `manifest.json` records the pre-upload freeze state; this repository's `RELEASE_METADATA.md` records current publication status. No images or masks are included.
+The script verifies each part and the assembled ZIP against SHA-256 hashes in `release/parts.json`. Extract the ZIP to access `data/rsrcc/` and `data/disasterm3/`. Documentation inside the frozen ZIP reflects its pre-upload state; the repository-root documents, especially `RELEASE_METADATA.md`, record the current publication status. No images or masks are included.
 
 ## Contents inside the assembled ZIP
 
