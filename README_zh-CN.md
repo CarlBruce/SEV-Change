@@ -14,7 +14,7 @@ GitHub 仓库为 [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change)
 python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc1-git.zip
 ```
 
-脚本会校验每个分包及合并后的 ZIP 的 SHA-256。解压后可获得 `data/rsrcc/` 与 `data/disasterm3/`。ZIP 内的 `manifest.json` 记录上传前冻结状态；仓库根目录的 `RELEASE_METADATA.md` 记录当前发布状态。数据包不含影像和掩膜。
+脚本会校验每个分包及合并后的 ZIP 的 SHA-256。解压后可获得 `data/rsrcc/` 与 `data/disasterm3/`。冻结 ZIP 内的说明文件反映上传前状态；以仓库根目录的说明文件，尤其是 `RELEASE_METADATA.md`，作为当前发布状态。数据包不含影像和掩膜。
 
 ## 数据规模
 
