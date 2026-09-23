@@ -1,0 +1,156 @@
+{
+  "release_name": "SEV-Change",
+  "release_version": "v0.1.0-rc1",
+  "release_status": "local_candidate_not_published",
+  "format_version": "1.0",
+  "variant_keys": [
+    "raw",
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "totals": {
+    "RSRCC": {
+      "files": 1,
+      "records": 21999,
+      "question_expressions": 175992,
+      "bytes": 63358812
+    },
+    "DisasterM3": {
+      "files": 10,
+      "records": 29024,
+      "question_expressions": 232192,
+      "bytes": 47749012
+    }
+  },
+  "files": [
+    {
+      "path": "data/disasterm3/DisasterM3_conflict_variants.json",
+      "dataset": "DisasterM3",
+      "records": 368,
+      "question_expressions": 2944,
+      "bytes": 524531,
+      "sha256": "8e220cf75f651c537ebb982bcbeff58a0a83eb1239ca1879440daa557f058560",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "conflict"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_earthquake_variants.json",
+      "dataset": "DisasterM3",
+      "records": 9888,
+      "question_expressions": 79104,
+      "bytes": 16521307,
+      "sha256": "461b2e830e44dfa3e030936f550c0387442108f58bd9f379659906f31789ad4a",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "earthquake"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_explosion_variants.json",
+      "dataset": "DisasterM3",
+      "records": 1298,
+      "question_expressions": 10384,
+      "bytes": 2142719,
+      "sha256": "43e906ad4e54fdac07a88100c303464d7dbdd5e2c93cd50dc92cc2db8b050896",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "explosion"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_fire_variants.json",
+      "dataset": "DisasterM3",
+      "records": 3871,
+      "question_expressions": 30968,
+      "bytes": 6351950,
+      "sha256": "8e60b630e61b4643fbd55dc426e7487fca338d34043b145817b924423f638914",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "fire"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_flood_variants.json",
+      "dataset": "DisasterM3",
+      "records": 2853,
+      "question_expressions": 22824,
+      "bytes": 4696926,
+      "sha256": "3adcd13e413bb27aedf2c461e0d0d23c9f30574c6b18ec3337fabb8778c11793",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "flood"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_hurricane_variants.json",
+      "dataset": "DisasterM3",
+      "records": 4121,
+      "question_expressions": 32968,
+      "bytes": 6590376,
+      "sha256": "fa0febcccb3e87d18347dbe204d6a9d614bdf6469c0622d966483183d160c747",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "hurricane"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_landslide_variants.json",
+      "dataset": "DisasterM3",
+      "records": 114,
+      "question_expressions": 912,
+      "bytes": 154903,
+      "sha256": "b1f6793dd1a4b7501a06c16087361613f21bcf9403c4ed602aef4f114c3cbe07",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "landslide"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_tornado_variants.json",
+      "dataset": "DisasterM3",
+      "records": 3224,
+      "question_expressions": 25792,
+      "bytes": 5352016,
+      "sha256": "be1732aa330a503748bfe71cefe4faa9e19257766b893d262050a71b2e9c6ec8",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "tornado"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_tsunami_variants.json",
+      "dataset": "DisasterM3",
+      "records": 2015,
+      "question_expressions": 16120,
+      "bytes": 3347026,
+      "sha256": "3c0f11c32cea9a556e897e3b673d975a03f540b9a45011cf41a74cb9e177de1d",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "tsunami"
+    },
+    {
+      "path": "data/disasterm3/DisasterM3_volcano_variants.json",
+      "dataset": "DisasterM3",
+      "records": 1272,
+      "question_expressions": 10176,
+      "bytes": 2067258,
+      "sha256": "2186c749f0ec1a4dda67014b58ff0a68d7f42b9b47184d7ec9b7adfca3d57a8c",
+      "duplicate_raw_task_identities": 0,
+      "raw_source_mismatches": 0,
+      "category": "volcano"
+    },
+    {
+      "path": "data/rsrcc/rsrcc_test_variants.json",
+      "dataset": "RSRCC",
+      "records": 21999,
+      "question_expressions": 175992,
+      "bytes": 63358812,
+      "sha256": "37232b68d9ec8c22a962ccf5d2408c1777f2da8ff0cb7089cd4bb0b0285777dd",
+      "duplicate_raw_task_identities": 1,
+      "raw_source_mismatches": 0
+    }
+  ],
+  "validation": {
+    "errors": 0,
+    "warnings": 1
+  }
+}

@@ -4,11 +4,21 @@ SEV-Change is a paired-question benchmark for evaluating semantic invariance in 
 
 [中文说明](README_zh-CN.md)
 
-> Release status: **draft / pre-publication**. The data files are organized and machine-validated, but the license, permanent citation, transformation-rule specification, and human semantic-equivalence audit must be completed before public release.
+> Release status: **public candidate, not a final benchmark release**. The data files are organized and machine-validated. An explicit reuse license, permanent citation, transformation-rule specification, and human semantic-equivalence audit remain outstanding.
 
-Repository: [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change), verified live but not yet populated with this dataset. Local candidate version: `v0.1.0-rc1`. No dataset DOI has been minted. See `RELEASE_METADATA.md` for the status of each publication field.
+Repository: [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change). Candidate version: `v0.1.0-rc1`. No dataset DOI or GitHub release tag has been minted. See `RELEASE_METADATA.md` for publication status.
 
-## Package contents
+## Download the complete data package
+
+The original 11 JSON files are preserved inside one ZIP, distributed as seven numbered parts under `release/` because this upload route timed out on large individual files. Download all seven parts and `release/parts.json`, then run:
+
+```bash
+python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc1-git.zip
+```
+
+The script verifies each part and the assembled ZIP against SHA-256 hashes in `release/parts.json`. Extract the ZIP to access `data/rsrcc/` and `data/disasterm3/`. The ZIP's `manifest.json` records the pre-upload freeze state; this repository's `RELEASE_METADATA.md` records current publication status. No images or masks are included.
+
+## Contents inside the assembled ZIP
 
 ```text
 SEV-Change/
@@ -64,11 +74,10 @@ The validator checks JSON structure, required fields, variant completeness/order
 
 One RSRCC raw-task identity occurs twice (`test_003550` and `test_009075`). The two records have different generated variants and are retained pending an upstream-source audit; the validator reports this as a warning rather than silently deleting either record.
 
-## Before publication
+## Before final release
 
-Do not present this folder as a final public release until the items in `RELEASE_CHECKLIST.md` are resolved. The 29,024 DisasterM3 count is obtained by the documented paired-image eligibility rule in `EXCLUSIONS.md`.
+Do not present this candidate as a final audited benchmark until the items in `RELEASE_CHECKLIST.md` are resolved. The 29,024 DisasterM3 count is obtained by the documented paired-image eligibility rule in `EXCLUSIONS.md`.
 
 ## Citation
 
 Citation metadata has not yet been finalized. Add a verified paper citation and `CITATION.cff` only after the title, authors, venue/preprint identifier, and release version are frozen.
-
