@@ -145,7 +145,7 @@ def validate(root: Path, write_manifest: bool) -> int:
     manifest = {
         "release_name": "SEV-Change",
         "release_version": "v0.1.0-rc1",
-        "release_status": "local_candidate_not_published",
+        "release_status": "public_candidate_pending_adjudication",
         "format_version": "1.0",
         "variant_keys": list(VARIANT_KEYS),
         "totals": totals,

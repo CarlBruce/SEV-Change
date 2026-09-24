@@ -34,11 +34,12 @@ The source DisasterM3 variant files contained 30,042 records. The release exclud
 
 ## Known limitations
 
-- Human semantic-equivalence review statistics are not yet included.
+- The author's stratified review record has 1,400 pairs; its original 42 negative labels are pending re-adjudication. See `AUDIT_STATUS.md`. Full per-pair review records are not in this candidate archive.
 - The transformation prompts, generation parameters, and exact rule definitions are not yet frozen.
 - The image data are external dependencies.
 - The uploader attested redistribution rights, but no explicit downstream reuse license has been assigned.
 - Existing experiments cover a filtered comparable subset rather than every packaged DisasterM3 record.
+- The model baseline predates re-adjudication and is provisional; full inference and scoring artifacts are not yet public.
 - English-language variants do not measure multilingual robustness.
 
 ## Licensing and ethics

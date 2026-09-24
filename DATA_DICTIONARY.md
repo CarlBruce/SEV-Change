@@ -31,3 +31,25 @@ Every DisasterM3 record has `prompts`, `task`, `_disaster_category`, `_event_nam
 ## Paths and record scope
 
 DisasterM3 paths currently use backslashes in their original source records; RSRCC paths use forward slashes. Treat both as relative paths and normalize separators on the target operating system. The release keeps only DisasterM3 records containing both `pre_image_path` and `post_image_path`; the exclusion rule is documented in `EXCLUSIONS.md`.
+
+## DisasterM3 task coverage
+
+The following counts are calculated from the ten packaged JSON files. `options_list` identifies the five closed-answer task types used by the current Exact Match baseline; it is not present for every task.
+
+| Task | Packaged records | In closed-answer pool? |
+|---|---:|---|
+| Building Damage Counting | 4,982 | Yes |
+| Disaster Bearing Bodies Recognition | 2,363 | Yes |
+| Disaster Type Recognition | 420 | Yes |
+| Road Damage Counting | 2,178 | Yes |
+| Disaster Scene Recognition | 2,007 | Yes |
+| Referring Expression Segmentation | 12,348 | No |
+| Disaster Report | 2,363 | No |
+| Disaster Restoration Advice | 2,363 | No |
+| **Total** | **29,024** | **11,950 with options** |
+
+The working manuscript's seven-model Exact Match baseline uses 11,945 complete shared records, five fewer than the option-bearing pool. The exact common sample-ID list and per-sample predictions are not yet published. The baseline must not be described as covering all 29,024 records or all eight tasks.
+
+## Quality metadata scope
+
+RSRCC records include `qc_status` and `transformation_rule_version`; the current DisasterM3 files do not have equivalent per-record fields. Neither source's current data files encode the later 42-pair pending re-adjudication status. Refer to `AUDIT_STATUS.md` before using the candidate variants as a strict semantic-equivalence benchmark.

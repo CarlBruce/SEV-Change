@@ -2,13 +2,19 @@
 
 本目录已将 RSRCC 与 DisasterM3 的语义等价问题变体整理为统一的 GitHub 发布结构。每条任务记录包含原始问题 `raw` 和七个受控变体 `t1`–`t7`，并保留视觉输入路径、标准答案及任务相关元数据。
 
-> 当前是已公开的候选版，不是经过完整审核的最终 benchmark。明确的再使用许可证、人工语义等价审查、生成规则冻结和正式引用信息仍待完成。
+> 当前是已公开的候选版，不是最终 benchmark。作者确认的抽样审查表中有 42 组原判“不等价”的配对，现已全部标记为“待重新裁定”；明确的下游许可、正式归档标识、完整生成与评分代码以及规则版本仍待补齐。
 
 GitHub 仓库为 [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change)，候选版本为 `v0.1.0-rc1`。尚无数据集 DOI 或 GitHub Release 标签；准确状态见 `RELEASE_METADATA.md`。
 
 ## 获取完整数据
 
-11 个原始 JSON 文件未改写，保存在同一个 ZIP 中。因当前上传通道对大文件超时，ZIP 分成 `release/` 下的七个编号分包。下载全部七个分包及 `release/parts.json`，运行：
+11 个原始 JSON 文件未改写，保存在同一个 ZIP 中。因当前上传通道对大文件超时，ZIP 分成 `release/` 下的七个编号分包。克隆仓库后，先运行只读校验：
+
+```bash
+python scripts/verify_release_archive.py
+```
+
+然后下载或保留全部七个分包及 `release/parts.json`，合并归档：
 
 ```bash
 python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc1-git.zip
@@ -40,20 +46,26 @@ LICENSE_STATUS.md           来源许可与衍生标注授权状态
 RELEASE_METADATA.md         仓库名、版本、访问地址和 DOI 状态
 SOURCES.md                  RSRCC 与 DisasterM3 官方仓库和引用
 RELEASE_CHECKLIST.md        正式上传前检查清单
+AUDIT_STATUS.md             人工审查统计与42组待裁定状态
+REPRODUCIBILITY.md          复现范围、命令及缺失项
+SCIENTIFIC_DATA_READINESS.md Scientific Data 要求对照
 ```
 
 本数据包衍生自 [RSRCC 官方数据页](https://huggingface.co/datasets/google/RSRCC) 和 [DisasterM3 官方仓库](https://github.com/Junjue-Wang/DisasterM3)。使用对应子集时应同时引用原始数据集；来源链接与已核实的引用信息见 `SOURCES.md`。
 
 ## 校验命令
 
+仓库根目录没有展开的 `data/`，不能直接运行旧版 README 中的结构校验命令。先合并 ZIP，再运行：
+
 ```bash
-python scripts/validate_dataset.py --write-manifest
+python -m zipfile -e SEV-Change-v0.1.0-rc1-git.zip extracted
+python scripts/validate_dataset.py --root extracted
 ```
 
-脚本不依赖第三方 Python 包。当前全部 JSON 均通过结构校验；唯一警告是 RSRCC 中 `test_003550` 与 `test_009075` 共享相同的原始任务身份，但七类生成变体并不相同，因此暂时保留，等待回查源数据。
+脚本不依赖第三方 Python 包。结构校验不等于语义等价验证。RSRCC 中 `test_003550` 与 `test_009075` 共享相同的原始任务身份，但七类生成变体并不相同，因此暂时保留，等待回查源数据。人工审查现状见 `AUDIT_STATUS.md`，完整复现缺口见 `REPRODUCIBILITY.md`。
 
-## 上传建议
+## 正式发表前
 
-- 直接建 GitHub 仓库时，单个最大文件约 60 MiB，未超过 GitHub 100 MB 单文件限制。
-- 若计划频繁更新大 JSON，建议在正式建库前决定使用 Git LFS 还是 GitHub Release 附件，避免仓库历史持续膨胀。
-- 不要把本地实验日志、模型权重、API 密钥或未授权影像一起上传。
+- 裁定 42 组争议配对，冻结数据并重算受影响的七模型指标。
+- 在适当的长期数据仓库归档完整数据，取得可核验的永久标识，并补齐派生标注的下游许可。
+- 公开实际使用的生成、推理、答案规范化和评分代码及运行配置；不要上传本地日志中的密钥、私人路径或未授权影像。

@@ -3,7 +3,8 @@
 ## Blocking issues
 
 - [x] Reconcile 30,042 source DisasterM3 records with the 29,024 paired-image release count; see `EXCLUSIONS.md`.
-- [ ] Verify that each `raw` + `t1`–`t7` group is semantically equivalent through a documented human audit.
+- [x] Document the author's 1,400-pair stratified review and preserve its original statistics in `AUDIT_STATUS.md`.
+- [ ] Re-adjudicate the 42 originally negative pairs, record reasons and per-record decisions, and rerun affected model results before claiming a frozen equivalence benchmark.
 - [ ] Freeze and publish the exact transformation rules, prompts, model/version, decoding parameters, and rule version.
 - [x] Record publicly stated source terms and links in `LICENSE_STATUS.md`.
 - [x] Obtain uploader confirmation of redistribution rights for DisasterM3-derived fields (2026-09-23; not independent legal verification).
@@ -16,16 +17,22 @@
 - [x] Set the planned repository name and local candidate version in `RELEASE_METADATA.md`.
 - [x] Create the repository and confirm its public URL (`https://github.com/CarlBruce/SEV-Change`).
 - [ ] Add repository description, topics, and maintainer contact.
+- [x] Provide an issue template for record-level correction reports.
 - [ ] Add `CITATION.cff` after bibliographic metadata is final.
 - [ ] Add changelog and semantic version tag (for example, `v1.0.0`).
 - [x] Preserve the 11 JSON files inside a SHA-256-verified ZIP, uploaded as seven numbered repository parts due large-file API timeouts.
+- [x] Add `scripts/verify_release_archive.py` and CI to validate the public split archive against `manifest.json`.
+- [ ] Deposit the frozen complete dataset in a formal long-term data repository and verify its persistent identifier.
 
 ## Reproducibility
 
-- [ ] Run `python scripts/validate_dataset.py --write-manifest` on the final files.
+- [x] Verify the current public ZIP parts and all 11 data files against the candidate manifest.
+- [ ] Run `python scripts/validate_dataset.py --root extracted` on the final frozen files and update the manifest if the data change.
 - [ ] Confirm all SHA-256 hashes in `manifest.json` after the final edit.
 - [ ] Publish the answer-normalization and evaluation scripts.
 - [ ] Publish the exact model inference configurations used in the paper.
+- [ ] Publish per-sample predictions and the common sample-ID lists used for every reported result.
+- [ ] Publish the original generation prompts/rules and source-specific answer parsers and aggregation code.
 - [ ] Document how users obtain and align the upstream image datasets.
 
 ## Privacy and cleanup
