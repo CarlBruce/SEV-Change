@@ -104,6 +104,8 @@ def verify(parts_path: Path, manifest_path: Path) -> None:
             raise ValueError(f"Record total mismatch: {dataset}")
         if reported["question_expressions"] != sum(entry["question_expressions"] for entry in subset):
             raise ValueError(f"Expression total mismatch: {dataset}")
+        if reported["bytes"] != sum(entry["bytes"] for entry in subset):
+            raise ValueError(f"Byte total mismatch: {dataset}")
     print("Archive, 11 data files, and manifest verified.")
     print("Semantic equivalence and source-image availability are NOT verified by this script.")
 

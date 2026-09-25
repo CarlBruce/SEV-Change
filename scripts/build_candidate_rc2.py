@@ -52,7 +52,10 @@ def json_bytes(value: Any) -> bytes:
 
 
 def assemble_rc1(release_dir: Path) -> bytes:
-    parts = json.loads((release_dir / "parts.json").read_text(encoding="utf-8"))
+    source_manifest = release_dir / "rc1_parts.json"
+    if not source_manifest.exists():
+        source_manifest = release_dir / "parts.json"
+    parts = json.loads(source_manifest.read_text(encoding="utf-8"))
     if parts["archive_name"] != "SEV-Change-v0.1.0-rc1-git.zip":
         raise ValueError("Expected rc1 parts.json; refusing to build from another version")
     chunks: list[bytes] = []
@@ -67,10 +70,10 @@ def assemble_rc1(release_dir: Path) -> bytes:
     return archive
 
 
-def build(root: Path, output_zip: Path) -> None:
+def build(root: Path, output_zip: Path, replace_candidate: bool) -> None:
     release_dir = root / "release"
     old_archive = zipfile.ZipFile(io.BytesIO(assemble_rc1(release_dir)))
-    manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads(old_archive.read("manifest.json"))
     if manifest["release_version"] != "v0.1.0-rc1":
         raise ValueError("Expected rc1 data manifest")
 
@@ -108,10 +111,26 @@ def build(root: Path, output_zip: Path) -> None:
     if found != set(REVISIONS):
         raise ValueError(f"Missing revisions: {set(REVISIONS) - found}")
     manifest["release_version"] = "v0.1.0-rc2"
+    manifest["release_status"] = "public_candidate_post_adjudication_pending_rerun"
+    for dataset in ("RSRCC", "DisasterM3"):
+        manifest["totals"][dataset]["bytes"] = sum(
+            entry["bytes"] for entry in manifest["files"] if entry["dataset"] == dataset
+        )
     manifest_payload = json_bytes(manifest)
 
-    if output_zip.exists() or (release_dir / "rc1_parts.json").exists():
-        raise FileExistsError("rc2 output or legacy manifest already exists; refusing to overwrite")
+    if output_zip.exists():
+        raise FileExistsError(f"Refusing to overwrite output ZIP: {output_zip}")
+    legacy_manifest = release_dir / "rc1_parts.json"
+    if replace_candidate:
+        current_parts = json.loads((release_dir / "parts.json").read_text(encoding="utf-8"))
+        if not legacy_manifest.exists() or current_parts["archive_name"] != RELEASE_NAME:
+            raise ValueError("Replacement requires an existing rc1 backup and rc2 candidate")
+        for part in current_parts["parts"]:
+            current_payload = (release_dir / part["name"]).read_bytes()
+            if len(current_payload) != part["bytes"] or sha256(current_payload) != part["sha256"]:
+                raise ValueError(f"Existing rc2 part changed unexpectedly: {part['name']}")
+    elif legacy_manifest.exists():
+        raise FileExistsError("rc2 already exists; use --replace-candidate after verifying the current parts")
     output_zip.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output_zip, "x", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as target:
         for item in old_archive.infolist():
@@ -145,12 +164,13 @@ def build(root: Path, output_zip: Path) -> None:
     new_parts: list[dict[str, object]] = []
     for index, offset in enumerate(range(0, len(archive_bytes), CHUNK_SIZE), start=1):
         name = f"{RELEASE_NAME}.part{index:02d}"
-        if (release_dir / name).exists():
+        if (release_dir / name).exists() and not replace_candidate:
             raise FileExistsError(name)
         part = archive_bytes[offset:offset + CHUNK_SIZE]
         new_parts.append({"name": name, "bytes": len(part), "sha256": sha256(part)})
 
-    shutil.copy2(release_dir / "parts.json", release_dir / "rc1_parts.json")
+    if not legacy_manifest.exists():
+        shutil.copy2(release_dir / "parts.json", legacy_manifest)
     for index, offset in enumerate(range(0, len(archive_bytes), CHUNK_SIZE)):
         (release_dir / new_parts[index]["name"]).write_bytes(archive_bytes[offset:offset + CHUNK_SIZE])
     parts_manifest = {
@@ -167,8 +187,9 @@ def build(root: Path, output_zip: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-zip", type=Path, required=True)
+    parser.add_argument("--replace-candidate", action="store_true")
     args = parser.parse_args()
-    build(Path(__file__).resolve().parent.parent, args.output_zip.resolve())
+    build(Path(__file__).resolve().parent.parent, args.output_zip.resolve(), args.replace_candidate)
 
 
 if __name__ == "__main__":
