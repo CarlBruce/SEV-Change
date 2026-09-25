@@ -4,7 +4,7 @@ SEV-Change is a paired-question benchmark for evaluating semantic invariance in 
 
 [中文说明](README_zh-CN.md)
 
-> Release status: **candidate, not a final benchmark release**. The author's stratified review records 1,400/1,400 final equivalent decisions after 42 re-adjudications, but the changed decisions lack per-pair reasons. Six DisasterM3 strings have been revised; existing model scores were not rerun on them. A downstream reuse license, formal archival identifier, full generation/scoring code, and frozen transformation rules remain outstanding.
+> Release status: **candidate, not a final benchmark release**. The author's stratified review records 1,400/1,400 final equivalent decisions after 42 re-adjudications, but the changed decisions lack per-pair reasons. Six DisasterM3 strings have been revised in segmentation or report tasks outside the reported closed-answer main experiment. A downstream reuse license, formal archival identifier, full generation/scoring code, and frozen transformation rules remain outstanding.
 
 Repository: [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change). Candidate version: `v0.1.0-rc2`. No dataset DOI or GitHub release tag has been minted. See `RELEASE_METADATA.md` for publication status.
 
@@ -83,7 +83,7 @@ The validator checks JSON structure, required fields, variant completeness/order
 
 One RSRCC raw-task identity occurs twice (`test_003550` and `test_009075`). The two records have different generated variants and are retained pending an upstream-source audit; the validator reports this as a warning rather than silently deleting either record.
 
-The author's earlier review workbook labeled 1,358 of 1,400 sampled pairs equivalent and 42 non-equivalent. The supplied final-adjudication workbook changes those 42 final decisions to equivalent, yielding 1,400/1,400 in the stratified sample; six corrected DisasterM3 strings are included in this `rc2` candidate. The per-pair reasons for the changed decisions are not recorded, and the sample does not establish full-dataset equivalence. See [AUDIT_STATUS.md](AUDIT_STATUS.md). The current seven-model scores were computed before the six text revisions and remain provisional. [REPRODUCIBILITY.md](REPRODUCIBILITY.md) states which evaluation artifacts are not yet public.
+The author's earlier review workbook labeled 1,358 of 1,400 sampled pairs equivalent and 42 non-equivalent. The supplied final-adjudication workbook changes those 42 final decisions to equivalent, yielding 1,400/1,400 in the stratified sample; six corrected DisasterM3 strings are included in this `rc2` candidate. The per-pair reasons for the changed decisions are not recorded, and the sample does not establish full-dataset equivalence. See [AUDIT_STATUS.md](AUDIT_STATUS.md). The six edits fall outside the reported five-task closed-answer baseline, but exact sample-ID and prediction artifacts have not yet been published for independent verification. [REPRODUCIBILITY.md](REPRODUCIBILITY.md) states which evaluation artifacts are missing.
 
 ## Before final release
 

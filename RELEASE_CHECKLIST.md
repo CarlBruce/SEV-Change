@@ -6,7 +6,8 @@
 - [x] Document the author's 1,400-pair stratified review, original statistics, and 42 changed final decisions in `AUDIT_STATUS.md`.
 - [x] Record final equivalent decisions for the 42 originally negative pairs in the author's working workbook; synchronize the six revised DisasterM3 strings in the candidate archive.
 - [ ] Document per-pair adjudication reasons for the 42 changed decisions and publish an appropriately shareable audit trail.
-- [ ] Rerun affected model results on the revised data before claiming a frozen equivalence benchmark.
+- [x] Confirm the six revised records are five segmentation tasks and one report task, outside the reported closed-answer main experiment.
+- [ ] Publish the exact main-experiment sample IDs and per-sample predictions so the unaffected-scope claim can be independently checked; run new predictions before reporting results for revised task types.
 - [ ] Freeze and publish the exact transformation rules, prompts, model/version, decoding parameters, and rule version.
 - [x] Record publicly stated source terms and links in `LICENSE_STATUS.md`.
 - [x] Obtain uploader confirmation of redistribution rights for DisasterM3-derived fields (2026-09-23; not independent legal verification).

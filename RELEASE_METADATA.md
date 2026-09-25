@@ -13,4 +13,4 @@
 | Semantic audit | Final adjudication recorded as 1,400/1,400 equivalent in the author's stratified sample | Six revised strings synchronized; per-pair reasons for the 42 changed judgments are not recorded; see `AUDIT_STATUS.md` |
 | Benchmark code | Partial | Archive and structure validators are public; full generation/inference/scoring pipeline is not yet published |
 
-This remains a candidate snapshot, not a final licensed or formally archived release. Existing model scores were not rerun on the six revised strings and must be cited against their earlier data version. When a public archival DOI is minted, add its exact URL and update the manuscript, this file, `DATASET_CARD.md`, and the release tag together.
+This remains a candidate snapshot, not a final licensed or formally archived release. The six revised strings fall outside the reported five-task closed-answer model baseline; exact public sample-ID and prediction files are still needed to independently verify that scope. When a public archival DOI is minted, add its exact URL and update the manuscript, this file, `DATASET_CARD.md`, and the release tag together.

@@ -111,7 +111,7 @@ def build(root: Path, output_zip: Path, replace_candidate: bool) -> None:
     if found != set(REVISIONS):
         raise ValueError(f"Missing revisions: {set(REVISIONS) - found}")
     manifest["release_version"] = "v0.1.0-rc2"
-    manifest["release_status"] = "public_candidate_post_adjudication_pending_rerun"
+    manifest["release_status"] = "public_candidate_post_adjudication"
     for dataset in ("RSRCC", "DisasterM3"):
         manifest["totals"][dataset]["bytes"] = sum(
             entry["bytes"] for entry in manifest["files"] if entry["dataset"] == dataset

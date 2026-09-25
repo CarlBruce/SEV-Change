@@ -1,42 +1,42 @@
 {
   "archive_name": "SEV-Change-v0.1.0-rc2-git.zip",
-  "archive_bytes": 9143662,
-  "archive_sha256": "582ac26844fbb36228a6cbfbed12d8153da46991264ac1b1140a89c28cc16d9c",
+  "archive_bytes": 9144347,
+  "archive_sha256": "95cf9c362ebb2921de8e28c080f01c3752442ada97407bf51efa1ff44f2d1d55",
   "parts": [
     {
       "name": "SEV-Change-v0.1.0-rc2-git.zip.part01",
       "bytes": 1500000,
-      "sha256": "8a77cea120ec42aecf5f6fdc09dca3db671dcbd5426de9be53581ed6d0d46591"
+      "sha256": "291a53b9c3a362b1b40365752563b53f31a6436d78a2d3ff5da0fe158b2a88f1"
     },
     {
       "name": "SEV-Change-v0.1.0-rc2-git.zip.part02",
       "bytes": 1500000,
-      "sha256": "5169e6641293a0126fa936e5246c15a1e3133d8c8fc3a8d6344befde18fa8e1a"
+      "sha256": "0408096e2125c26d6a8152422341c9500826025d7b560446675e5aceb4443f66"
     },
     {
       "name": "SEV-Change-v0.1.0-rc2-git.zip.part03",
       "bytes": 1500000,
-      "sha256": "a4264016c97cd2834a90de44ff03733270b44d9c5a0ee1e6dfcdbb4329fd3c47"
+      "sha256": "a9ab274b35c7675b40edb02821175dc171bfe6b84d1671b9b4eecfebe47c2f14"
     },
     {
       "name": "SEV-Change-v0.1.0-rc2-git.zip.part04",
       "bytes": 1500000,
-      "sha256": "095a593791aa4708149c03dbe52aa561b3a4ca0ecd22b632bbb1292a96e56874"
+      "sha256": "c16798bfcce8f7c85547d6809407c509357f6a97cbe34ba9bcfa213d59098857"
     },
     {
       "name": "SEV-Change-v0.1.0-rc2-git.zip.part05",
       "bytes": 1500000,
-      "sha256": "bba03dafd7f84cc32dcb46bfa3250e5df8ef8e1073b0275c7fa316553b319181"
+      "sha256": "cd06aeeba42a914c04a98b750efabbeaa64f64a9f13f73414bd4b94799248b40"
     },
     {
       "name": "SEV-Change-v0.1.0-rc2-git.zip.part06",
       "bytes": 1500000,
-      "sha256": "0b949c80bc2a3a4b948d08ce99a515b197fdb27ca9f6d0ff1eb0c3e68e938303"
+      "sha256": "2235065b5370f8864555a6c88b0815a0adc8b26f7445411590527810ff310654"
     },
     {
       "name": "SEV-Change-v0.1.0-rc2-git.zip.part07",
-      "bytes": 143662,
-      "sha256": "5b36dd43c5b178e21b489f2b7b59b297ed36ac8bedbede27ac9e44abdaeed44f"
+      "bytes": 144347,
+      "sha256": "37738f7a689f92f6ec9a50bc5cfc1aecab2c10afc22ccf31bac1a66a8ebf6e17"
     }
   ]
 }

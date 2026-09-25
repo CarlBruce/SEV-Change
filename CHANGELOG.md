@@ -6,7 +6,8 @@
 - Revised six DisasterM3 question variants to restore the original target category or task. The six revised strings are the only question-text changes relative to `v0.1.0-rc1`; record counts and the RSRCC subset are unchanged.
 - Synchronized the candidate archive, SHA-256 manifest, and audit documentation. The earlier split archive remains available as legacy `rc1` parts.
 - Corrected the manifest's candidate-status field and recomputed per-source byte totals from the revised files; the verifier now checks those totals.
-- Per-pair reasons for the 42 changed decisions are absent from the supplied workbook. Model predictions and aggregate scores have **not** been rerun on this revision.
+- Per-pair reasons for the 42 changed decisions are absent from the supplied workbook. The six revised questions belong to segmentation or report tasks outside the reported closed-answer main experiment; no new model predictions or aggregate scores are claimed for this revision.
+- Confirmed the six revised task types against the 11,945-record closed-answer evaluation scope and corrected the version-boundary wording; the exact public sample-ID and prediction files are still missing.
 
 ## Unreleased candidate documentation update — 2026-09-24
 

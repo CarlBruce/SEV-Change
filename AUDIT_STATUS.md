@@ -16,6 +16,6 @@ The author-supplied re-adjudication workbook records the decisions but not per-p
 
 Structural and SHA-256 checks establish package integrity only. Further image/answer/mask-grounded review, a shareable per-pair adjudication trail, and the unresolved RSRCC duplicate-identity audit remain important for a frozen research release.
 
-## Model-result version boundary
+## Model-result scope
 
-The manuscript's seven-model predictions were produced before the six text revisions and were not rerun on `v0.1.0-rc2`. Existing aggregate scores describe the earlier evaluated candidate, not the corrected six strings. Do not attribute score changes or a revised robustness estimate to the re-adjudication without a common-version rerun.
+Five revised records are Referring Expression Segmentation tasks and one is a Disaster Report task. The manuscript's seven-model Exact Match baseline uses 11,945 complete records per model from five **closed-answer** DisasterM3 tasks; it excludes both revised task types. Accordingly, these six text edits do not change the question texts in the reported closed-answer subset. The existing aggregate scores have not been recomputed, and the exact sample-ID and per-sample prediction files are not yet public for independent confirmation of the evaluation scope. Any future evaluation that includes the revised segmentation or report tasks must use the `rc2` text and be run anew.

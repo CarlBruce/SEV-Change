@@ -39,7 +39,7 @@ The source DisasterM3 variant files contained 30,042 records. The release exclud
 - The image data are external dependencies.
 - The uploader attested redistribution rights, but no explicit downstream reuse license has been assigned.
 - Existing experiments cover a filtered comparable subset rather than every packaged DisasterM3 record.
-- The model baseline predates the six revised strings and was not rerun on this candidate; full inference and scoring artifacts are not yet public.
+- The six revised strings occur in segmentation or report tasks outside the reported five-task closed-answer baseline. That baseline has not been recomputed, and its full sample-ID, inference, and scoring artifacts are not yet public.
 - English-language variants do not measure multilingual robustness.
 
 ## Licensing and ethics

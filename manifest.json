@@ -1,7 +1,7 @@
 {
   "release_name": "SEV-Change",
   "release_version": "v0.1.0-rc2",
-  "release_status": "public_candidate_post_adjudication_pending_rerun",
+  "release_status": "public_candidate_post_adjudication",
   "format_version": "1.0",
   "variant_keys": [
     "raw",
