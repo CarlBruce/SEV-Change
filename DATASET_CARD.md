@@ -1,6 +1,6 @@
 # SEV-Change Dataset Card (Draft)
 
-Public candidate version: `v0.1.0-rc1` at [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change). The complete data package is distributed as verified ZIP parts; no DOI is available. See `RELEASE_METADATA.md`.
+Public candidate version: `v0.1.0-rc2` at [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change). The complete data package is distributed as verified ZIP parts; no DOI is available. See `RELEASE_METADATA.md`.
 
 ## Summary
 
@@ -34,12 +34,12 @@ The source DisasterM3 variant files contained 30,042 records. The release exclud
 
 ## Known limitations
 
-- The author's stratified review record has 1,400 pairs; its original 42 negative labels are pending re-adjudication. See `AUDIT_STATUS.md`. Full per-pair review records are not in this candidate archive.
+- The author's stratified review records final equivalent judgments for all 1,400 sampled pairs after 42 re-adjudications. Six DisasterM3 strings were revised and synchronized in this candidate. This is not a full-dataset quality guarantee; the 42 per-pair reasons and full review workbook are not public. See `AUDIT_STATUS.md`.
 - The transformation prompts, generation parameters, and exact rule definitions are not yet frozen.
 - The image data are external dependencies.
 - The uploader attested redistribution rights, but no explicit downstream reuse license has been assigned.
 - Existing experiments cover a filtered comparable subset rather than every packaged DisasterM3 record.
-- The model baseline predates re-adjudication and is provisional; full inference and scoring artifacts are not yet public.
+- The model baseline predates the six revised strings and was not rerun on this candidate; full inference and scoring artifacts are not yet public.
 - English-language variants do not measure multilingual robustness.
 
 ## Licensing and ethics

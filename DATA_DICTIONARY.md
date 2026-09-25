@@ -52,4 +52,4 @@ The working manuscript's seven-model Exact Match baseline uses 11,945 complete s
 
 ## Quality metadata scope
 
-RSRCC records include `qc_status` and `transformation_rule_version`; the current DisasterM3 files do not have equivalent per-record fields. Neither source's current data files encode the later 42-pair pending re-adjudication status. Refer to `AUDIT_STATUS.md` before using the candidate variants as a strict semantic-equivalence benchmark.
+RSRCC records include `qc_status` and `transformation_rule_version`; the current DisasterM3 files do not have equivalent per-record fields. The current data files do not encode the later 1,400-pair human-audit decisions as per-record metadata. Refer to `AUDIT_STATUS.md` before using the candidate variants as a strict semantic-equivalence benchmark.

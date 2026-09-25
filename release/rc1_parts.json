@@ -1,0 +1,42 @@
+{
+  "archive_name": "SEV-Change-v0.1.0-rc1-git.zip",
+  "archive_bytes": 9335483,
+  "archive_sha256": "d4b99a744e8e0a5c1b1d6145e0a217aa2a414365aa64b0ac2f1594a463b96717",
+  "parts": [
+    {
+      "name": "SEV-Change-v0.1.0-rc1-git.zip.part01",
+      "bytes": 1500000,
+      "sha256": "3f20ad720fb1686651feb8cd04a65a9dd435321da0bd0ab691b41d69fd729cf8"
+    },
+    {
+      "name": "SEV-Change-v0.1.0-rc1-git.zip.part02",
+      "bytes": 1500000,
+      "sha256": "0667fd386c918e7066b2a09d3ce50562bfa4100fd685f898f02bdba1332eb807"
+    },
+    {
+      "name": "SEV-Change-v0.1.0-rc1-git.zip.part03",
+      "bytes": 1500000,
+      "sha256": "bc281132e1f3e9c1d6458533b20535f8f1ad3b3b47f582439fb3546b25790954"
+    },
+    {
+      "name": "SEV-Change-v0.1.0-rc1-git.zip.part04",
+      "bytes": 1500000,
+      "sha256": "757de831a5e3f5366800c67130bb1432c69478a20cc7fcacd9364676f82409a4"
+    },
+    {
+      "name": "SEV-Change-v0.1.0-rc1-git.zip.part05",
+      "bytes": 1500000,
+      "sha256": "58465bc08050ac8a4c6090f54386618acc1af9d8eec3481ecb401465ce7c128c"
+    },
+    {
+      "name": "SEV-Change-v0.1.0-rc1-git.zip.part06",
+      "bytes": 1500000,
+      "sha256": "5f41c967609f50eff3e73aedc058c1bfc685559a46944edf45bd171f6240839f"
+    },
+    {
+      "name": "SEV-Change-v0.1.0-rc1-git.zip.part07",
+      "bytes": 335483,
+      "sha256": "d6b9091175d3b57a2d1753dbce225d0b268ebc6033c95959cf8822e849d97e4f"
+    }
+  ]
+}

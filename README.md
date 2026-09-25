@@ -4,9 +4,9 @@ SEV-Change is a paired-question benchmark for evaluating semantic invariance in 
 
 [中文说明](README_zh-CN.md)
 
-> Release status: **public candidate, not a final benchmark release**. The files are machine-validated, but 42 pairs from the author's stratified human-review record are pending re-adjudication. A downstream reuse license, formal archival identifier, full generation/scoring code, and frozen transformation rules remain outstanding.
+> Release status: **candidate, not a final benchmark release**. The author's stratified review records 1,400/1,400 final equivalent decisions after 42 re-adjudications, but the changed decisions lack per-pair reasons. Six DisasterM3 strings have been revised; existing model scores were not rerun on them. A downstream reuse license, formal archival identifier, full generation/scoring code, and frozen transformation rules remain outstanding.
 
-Repository: [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change). Candidate version: `v0.1.0-rc1`. No dataset DOI or GitHub release tag has been minted. See `RELEASE_METADATA.md` for publication status.
+Repository: [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change). Candidate version: `v0.1.0-rc2`. No dataset DOI or GitHub release tag has been minted. See `RELEASE_METADATA.md` for publication status.
 
 ## Verify and download the complete data package
 
@@ -16,13 +16,13 @@ From a clean clone, first verify the numbered parts, assembled ZIP contents, all
 python scripts/verify_release_archive.py
 ```
 
-The original 11 JSON files are preserved inside one ZIP, distributed as seven numbered parts under `release/` because this upload route timed out on large individual files. Download all seven parts and `release/parts.json`, then run:
+The 11 JSON files are preserved inside one ZIP, distributed as numbered parts under `release/` because this upload route timed out on large individual files. The `rc2` candidate changes six DisasterM3 question strings relative to `rc1`; record counts are unchanged. Download every part named by `release/parts.json`, then run:
 
 ```bash
-python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc1-git.zip
+python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc2-git.zip
 ```
 
-The assembly script verifies each part and the ZIP against SHA-256 hashes in `release/parts.json`. Extract it to access `data/rsrcc/` and `data/disasterm3/`. Documentation inside the frozen ZIP reflects its pre-upload state; the repository-root documents, especially `RELEASE_METADATA.md`, record the current publication status. No images or masks are included. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the structural-validation command after extraction.
+The assembly script verifies each part and the ZIP against SHA-256 hashes in `release/parts.json`. Extract it to access `data/rsrcc/` and `data/disasterm3/`. The older `rc1` parts remain for versioned comparison and are described by `release/rc1_parts.json`; do not mix parts across versions. No images or masks are included. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the structural-validation command after extraction.
 
 ## Contents inside the assembled ZIP
 
@@ -75,7 +75,7 @@ The annotations are derived from [RSRCC](https://huggingface.co/datasets/google/
 The read-only archive verifier and structural validator use only the Python standard library. **Do not run the structural validator directly in the repository root:** the JSON files are inside the ZIP, not in a root `data/` directory. After extraction, run:
 
 ```bash
-python -m zipfile -e SEV-Change-v0.1.0-rc1-git.zip extracted
+python -m zipfile -e SEV-Change-v0.1.0-rc2-git.zip extracted
 python scripts/validate_dataset.py --root extracted
 ```
 
@@ -83,7 +83,7 @@ The validator checks JSON structure, required fields, variant completeness/order
 
 One RSRCC raw-task identity occurs twice (`test_003550` and `test_009075`). The two records have different generated variants and are retained pending an upstream-source audit; the validator reports this as a warning rather than silently deleting either record.
 
-The author's confirmed review workbook originally labeled 1,358 of 1,400 sampled pairs equivalent and 42 non-equivalent. All 42 have since been marked pending re-adjudication, without altering the original judgments. See [AUDIT_STATUS.md](AUDIT_STATUS.md). The current seven-model results precede this decision and remain provisional. [REPRODUCIBILITY.md](REPRODUCIBILITY.md) states exactly which evaluation artifacts are not yet public.
+The author's earlier review workbook labeled 1,358 of 1,400 sampled pairs equivalent and 42 non-equivalent. The supplied final-adjudication workbook changes those 42 final decisions to equivalent, yielding 1,400/1,400 in the stratified sample; six corrected DisasterM3 strings are included in this `rc2` candidate. The per-pair reasons for the changed decisions are not recorded, and the sample does not establish full-dataset equivalence. See [AUDIT_STATUS.md](AUDIT_STATUS.md). The current seven-model scores were computed before the six text revisions and remain provisional. [REPRODUCIBILITY.md](REPRODUCIBILITY.md) states which evaluation artifacts are not yet public.
 
 ## Before final release
 

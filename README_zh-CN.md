@@ -2,25 +2,25 @@
 
 本目录已将 RSRCC 与 DisasterM3 的语义等价问题变体整理为统一的 GitHub 发布结构。每条任务记录包含原始问题 `raw` 和七个受控变体 `t1`–`t7`，并保留视觉输入路径、标准答案及任务相关元数据。
 
-> 当前是已公开的候选版，不是最终 benchmark。作者确认的抽样审查表中有 42 组原判“不等价”的配对，现已全部标记为“待重新裁定”；明确的下游许可、正式归档标识、完整生成与评分代码以及规则版本仍待补齐。
+> 当前仍是候选版，不是最终 benchmark。作者提供的最终裁定表将分层样本中的 1,400 组均记为“等价”，其中 42 组由原判“不等价”改判；这 42 组缺少逐组裁定理由。六处 DisasterM3 问题文本已修订，但旧版模型结果尚未重跑。明确的下游许可、正式归档标识、完整生成与评分代码以及规则版本仍待补齐。
 
-GitHub 仓库为 [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change)，候选版本为 `v0.1.0-rc1`。尚无数据集 DOI 或 GitHub Release 标签；准确状态见 `RELEASE_METADATA.md`。
+GitHub 仓库为 [CarlBruce/SEV-Change](https://github.com/CarlBruce/SEV-Change)，候选版本为 `v0.1.0-rc2`。尚无数据集 DOI 或 GitHub Release 标签；准确状态见 `RELEASE_METADATA.md`。
 
 ## 获取完整数据
 
-11 个原始 JSON 文件未改写，保存在同一个 ZIP 中。因当前上传通道对大文件超时，ZIP 分成 `release/` 下的七个编号分包。克隆仓库后，先运行只读校验：
+11 个 JSON 文件保存在同一个 ZIP 中。相对 `rc1`，本候选版仅修订了六处 DisasterM3 问题文本，记录数量不变。因当前上传通道对大文件超时，ZIP 分成 `release/` 下的编号分包。克隆仓库后，先运行只读校验：
 
 ```bash
 python scripts/verify_release_archive.py
 ```
 
-然后下载或保留全部七个分包及 `release/parts.json`，合并归档：
+然后下载或保留 `release/parts.json` 列出的全部分包，合并归档：
 
 ```bash
-python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc1-git.zip
+python scripts/archive_parts.py assemble release/parts.json SEV-Change-v0.1.0-rc2-git.zip
 ```
 
-脚本会校验每个分包及合并后的 ZIP 的 SHA-256。解压后可获得 `data/rsrcc/` 与 `data/disasterm3/`。冻结 ZIP 内的说明文件反映上传前状态；以仓库根目录的说明文件，尤其是 `RELEASE_METADATA.md`，作为当前发布状态。数据包不含影像和掩膜。
+脚本会校验每个分包及合并后的 ZIP 的 SHA-256。解压后可获得 `data/rsrcc/` 与 `data/disasterm3/`。旧版 `rc1` 分包保留供版本比较，其清单为 `release/rc1_parts.json`；不同版本的分包不可混用。数据包不含影像和掩膜。
 
 ## 数据规模
 
@@ -46,7 +46,7 @@ LICENSE_STATUS.md           来源许可与衍生标注授权状态
 RELEASE_METADATA.md         仓库名、版本、访问地址和 DOI 状态
 SOURCES.md                  RSRCC 与 DisasterM3 官方仓库和引用
 RELEASE_CHECKLIST.md        正式上传前检查清单
-AUDIT_STATUS.md             人工审查统计与42组待裁定状态
+AUDIT_STATUS.md             人工审查历史、最终裁定与证据边界
 REPRODUCIBILITY.md          复现范围、命令及缺失项
 SCIENTIFIC_DATA_READINESS.md Scientific Data 要求对照
 ```
@@ -58,7 +58,7 @@ SCIENTIFIC_DATA_READINESS.md Scientific Data 要求对照
 仓库根目录没有展开的 `data/`，不能直接运行旧版 README 中的结构校验命令。先合并 ZIP，再运行：
 
 ```bash
-python -m zipfile -e SEV-Change-v0.1.0-rc1-git.zip extracted
+python -m zipfile -e SEV-Change-v0.1.0-rc2-git.zip extracted
 python scripts/validate_dataset.py --root extracted
 ```
 
@@ -66,6 +66,6 @@ python scripts/validate_dataset.py --root extracted
 
 ## 正式发表前
 
-- 裁定 42 组争议配对，冻结数据并重算受影响的七模型指标。
+- 补记 42 组改判的逐组依据，公开适当的审查记录，并在修订后数据上重算受影响的七模型指标。
 - 在适当的长期数据仓库归档完整数据，取得可核验的永久标识，并补齐派生标注的下游许可。
 - 公开实际使用的生成、推理、答案规范化和评分代码及运行配置；不要上传本地日志中的密钥、私人路径或未授权影像。

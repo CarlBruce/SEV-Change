@@ -3,8 +3,10 @@
 ## Blocking issues
 
 - [x] Reconcile 30,042 source DisasterM3 records with the 29,024 paired-image release count; see `EXCLUSIONS.md`.
-- [x] Document the author's 1,400-pair stratified review and preserve its original statistics in `AUDIT_STATUS.md`.
-- [ ] Re-adjudicate the 42 originally negative pairs, record reasons and per-record decisions, and rerun affected model results before claiming a frozen equivalence benchmark.
+- [x] Document the author's 1,400-pair stratified review, original statistics, and 42 changed final decisions in `AUDIT_STATUS.md`.
+- [x] Record final equivalent decisions for the 42 originally negative pairs in the author's working workbook; synchronize the six revised DisasterM3 strings in the candidate archive.
+- [ ] Document per-pair adjudication reasons for the 42 changed decisions and publish an appropriately shareable audit trail.
+- [ ] Rerun affected model results on the revised data before claiming a frozen equivalence benchmark.
 - [ ] Freeze and publish the exact transformation rules, prompts, model/version, decoding parameters, and rule version.
 - [x] Record publicly stated source terms and links in `LICENSE_STATUS.md`.
 - [x] Obtain uploader confirmation of redistribution rights for DisasterM3-derived fields (2026-09-23; not independent legal verification).
@@ -20,7 +22,7 @@
 - [x] Provide an issue template for record-level correction reports.
 - [ ] Add `CITATION.cff` after bibliographic metadata is final.
 - [ ] Add changelog and semantic version tag (for example, `v1.0.0`).
-- [x] Preserve the 11 JSON files inside a SHA-256-verified ZIP, uploaded as seven numbered repository parts due large-file API timeouts.
+- [x] Preserve the 11 JSON files inside a SHA-256-verified ZIP, distributed as numbered repository parts due large-file API timeouts.
 - [x] Add `scripts/verify_release_archive.py` and CI to validate the public split archive against `manifest.json`.
 - [ ] Deposit the frozen complete dataset in a formal long-term data repository and verify its persistent identifier.
 

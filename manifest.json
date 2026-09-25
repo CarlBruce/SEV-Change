@@ -1,6 +1,6 @@
 {
   "release_name": "SEV-Change",
-  "release_version": "v0.1.0-rc1",
+  "release_version": "v0.1.0-rc2",
   "release_status": "public_candidate_pending_adjudication",
   "format_version": "1.0",
   "variant_keys": [
@@ -33,8 +33,8 @@
       "dataset": "DisasterM3",
       "records": 368,
       "question_expressions": 2944,
-      "bytes": 524531,
-      "sha256": "8e220cf75f651c537ebb982bcbeff58a0a83eb1239ca1879440daa557f058560",
+      "bytes": 524498,
+      "sha256": "c4c5f498620fccb656926289d8199e177c910b457be2147ff73babc8ad7dba78",
       "duplicate_raw_task_identities": 0,
       "raw_source_mismatches": 0,
       "category": "conflict"
@@ -44,8 +44,8 @@
       "dataset": "DisasterM3",
       "records": 9888,
       "question_expressions": 79104,
-      "bytes": 16521307,
-      "sha256": "461b2e830e44dfa3e030936f550c0387442108f58bd9f379659906f31789ad4a",
+      "bytes": 16521244,
+      "sha256": "a40cb568bc175cb141969b678aeff1c983f6fce12047af8876f4be9297da91ed",
       "duplicate_raw_task_identities": 0,
       "raw_source_mismatches": 0,
       "category": "earthquake"
@@ -77,8 +77,8 @@
       "dataset": "DisasterM3",
       "records": 2853,
       "question_expressions": 22824,
-      "bytes": 4696926,
-      "sha256": "3adcd13e413bb27aedf2c461e0d0d23c9f30574c6b18ec3337fabb8778c11793",
+      "bytes": 4696903,
+      "sha256": "3d0c8bb3cf1cf13cc646f86ebc7523eba0d88d4d5d5dd73d18debe66dcadd50a",
       "duplicate_raw_task_identities": 0,
       "raw_source_mismatches": 0,
       "category": "flood"
@@ -88,8 +88,8 @@
       "dataset": "DisasterM3",
       "records": 4121,
       "question_expressions": 32968,
-      "bytes": 6590376,
-      "sha256": "fa0febcccb3e87d18347dbe204d6a9d614bdf6469c0622d966483183d160c747",
+      "bytes": 6590356,
+      "sha256": "2747cb61b0172a8ad4359d16aadb2273bd9f3968a6e9101239e5ac6f2bca88a8",
       "duplicate_raw_task_identities": 0,
       "raw_source_mismatches": 0,
       "category": "hurricane"
@@ -121,8 +121,8 @@
       "dataset": "DisasterM3",
       "records": 2015,
       "question_expressions": 16120,
-      "bytes": 3347026,
-      "sha256": "3c0f11c32cea9a556e897e3b673d975a03f540b9a45011cf41a74cb9e177de1d",
+      "bytes": 3347007,
+      "sha256": "b27c6363e03cf64b006755695849e6ffac5b6813e167c4564881110d6bb5aba4",
       "duplicate_raw_task_identities": 0,
       "raw_source_mismatches": 0,
       "category": "tsunami"
